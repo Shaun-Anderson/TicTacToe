@@ -15,6 +15,7 @@
 		CA498CD61E7A88E300C4B344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA498CD41E7A88E300C4B344 /* LaunchScreen.storyboard */; };
 		CA498CE11E7A88E300C4B344 /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA498CE01E7A88E300C4B344 /* TicTacToeTests.swift */; };
 		CA498CEC1E7A88E300C4B344 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA498CEB1E7A88E300C4B344 /* TicTacToeUITests.swift */; };
+		CA498CFA1E7A89CF00C4B344 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA498CF91E7A89CF00C4B344 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CA498CE71E7A88E300C4B344 /* TicTacToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA498CEB1E7A88E300C4B344 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		CA498CED1E7A88E300C4B344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA498CF91E7A89CF00C4B344 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = ../GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				CA498CC81E7A88E300C4B344 /* AppDelegate.swift */,
 				CA498CCA1E7A88E300C4B344 /* ViewController.swift */,
+				CA498CF91E7A89CF00C4B344 /* GameViewController.swift */,
 				CA498CCC1E7A88E300C4B344 /* Main.storyboard */,
 				CA498CD21E7A88E300C4B344 /* Assets.xcassets */,
 				CA498CD41E7A88E300C4B344 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA498CFA1E7A89CF00C4B344 /* GameViewController.swift in Sources */,
 				CA498CD11E7A88E300C4B344 /* TicTacToe.xcdatamodeld in Sources */,
 				CA498CCB1E7A88E300C4B344 /* ViewController.swift in Sources */,
 				CA498CC91E7A88E300C4B344 /* AppDelegate.swift in Sources */,
