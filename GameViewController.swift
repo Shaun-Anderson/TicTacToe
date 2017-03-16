@@ -27,6 +27,8 @@ class GameViewController: UIViewController {
     
     var isSpace = true
     var gameOn = true
+    var vsAI = false
+    
     var whoseTurn: Int = 1
     
     override func viewDidLoad() {
