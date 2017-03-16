@@ -10,10 +10,25 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var button0: UIButton!
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
+    @IBOutlet weak var button3: UIButton!
+    @IBOutlet weak var button4: UIButton!
+    @IBOutlet weak var button5: UIButton!
+    @IBOutlet weak var button6: UIButton!
+    @IBOutlet weak var button7: UIButton!
+    @IBOutlet weak var button8: UIButton!
+    
+    @IBOutlet weak var turnLabel: UILabel!
+    
+    
     var grid = [Int](arrayLiteral: 0,0,0,0,0,0,0,0,0)
     
     var isSpace = true
     var gameOn = true
+    var whoseTurn: Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,9 +40,6 @@ class GameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    var whoseTurn: Int = 1
-    
-    @IBOutlet weak var turnLabel: UILabel!
     
     @IBAction func ButtonPressed(_ sender: UIButton)
     {
@@ -41,7 +53,7 @@ class GameViewController: UIViewController {
             {
                 
                 grid[0] = whoseTurn
-                
+                CheckGrid()
                 //Change Image of button
                 if(whoseTurn == 1)
                 {
@@ -58,7 +70,7 @@ class GameViewController: UIViewController {
             if(grid[1] == 0)
             {
                 grid[1] = whoseTurn
-                
+                CheckGrid()
                 //Change Image of button
                 if(whoseTurn == 1)
                 {
@@ -75,7 +87,7 @@ class GameViewController: UIViewController {
             if(grid[2] == 0)
             {
                 grid[2] = whoseTurn
-                
+                CheckGrid()
                 if(whoseTurn == 1)
                 {
                     sender.setImage(UIImage (named: "Cross"), for: .normal)
@@ -91,7 +103,7 @@ class GameViewController: UIViewController {
             if(grid[3] == 0)
             {
                 grid[3] = whoseTurn
-                
+                CheckGrid()
                 if(whoseTurn == 1)
                 {
                     sender.setImage(UIImage (named: "Cross"), for: .normal)
@@ -108,7 +120,7 @@ class GameViewController: UIViewController {
             if(grid[4] == 0)
             {
                 grid[4] = whoseTurn
-                
+                CheckGrid()
                 //Change Image of button
                 if(whoseTurn == 1)
                 {
@@ -127,7 +139,7 @@ class GameViewController: UIViewController {
             if(grid[5] == 0)
             {
                 grid[5] = whoseTurn
-                
+                CheckGrid()
                 //Change Image of button
                 if(whoseTurn == 1)
                 {
@@ -144,7 +156,7 @@ class GameViewController: UIViewController {
             if(grid[6] == 0)
             {
                 grid[6] = whoseTurn
-                
+                CheckGrid()
                 //Change Image of button
                 if(whoseTurn == 1)
                 {
@@ -161,7 +173,7 @@ class GameViewController: UIViewController {
             if(grid[7] == 0)
             {
                 grid[7] = whoseTurn
-                
+                CheckGrid()
                 //Change Image of button
                 if(whoseTurn == 1)
                 {
@@ -178,7 +190,7 @@ class GameViewController: UIViewController {
             if(grid[8] == 0)
             {
                 grid[8] = whoseTurn
-                
+                CheckGrid()
                 //Change Image of button
                 if(whoseTurn == 1)
                 {
@@ -195,8 +207,11 @@ class GameViewController: UIViewController {
             print("hi")
         }
         
+        //Check if game has ended and if not display next players name.
+        if(gameOn)
+        {
         turnLabel.text = "Player \(whoseTurn) Turn"
-        CheckGrid()
+        }
         }
     }
     
@@ -206,12 +221,28 @@ class GameViewController: UIViewController {
         //Make isSpace false and check against grid array to see if there are any spaces left
         isSpace = false
         
-        if(grid[0] == 1 && grid[1] == 1 && grid[2] == 1)
+        
+        //HORIZONTAL TOP CHECK
+        if(grid[0] == whoseTurn && grid[1] == whoseTurn && grid[2] == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
             turnLabel.text = "PLAYER 1 wins"
         }
+        
+        //HORIZONAL MIDDLE CHECK
+        if(grid[3] == whoseTurn && grid[4] == whoseTurn && grid[5] == whoseTurn)
+        {
+            gameOn = false
+            restartButton.isHidden = false
+            turnLabel.text = "PLAYER 1 wins"
+        }
+        
+        //HORIZONTAL BOTTON CHECK
+        
+        
+        
+        //Check if a space is still clear
         for i in grid
         {
             print(i)
@@ -220,9 +251,11 @@ class GameViewController: UIViewController {
                 isSpace = true
             }
         }
-        
+        // if no space is found it is a draw
         if(!isSpace)
         {
+            gameOn = false
+            restartButton.isHidden = false
             turnLabel.text = "No spaces left - TIE"
         }
         
@@ -230,6 +263,24 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var restartButton: UIButton!
     
+    @IBAction func restartGame(_ sender: UIButton)
+    {
+        gameOn = true
+        restartButton.isHidden = true
+        grid = [Int](arrayLiteral: 0,0,0,0,0,0,0,0,0)
+        turnLabel.text = "Player 1 Turn"
+        
+        //Reset Buttons
+        button0.setImage(UIImage(), for: .normal)
+        button1.setImage(UIImage(), for: .normal)
+        button2.setImage(UIImage(), for: .normal)
+        button3.setImage(UIImage(), for: .normal)
+        button4.setImage(UIImage(), for: .normal)
+        button5.setImage(UIImage(), for: .normal)
+        button6.setImage(UIImage(), for: .normal)
+        button7.setImage(UIImage(), for: .normal)
+        button8.setImage(UIImage(), for: .normal)
+    }
     
     /*
     // MARK: - Navigation
