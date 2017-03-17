@@ -27,13 +27,14 @@ class GameViewController: UIViewController {
     
     var isSpace = true
     var gameOn = true
-    var vsAI = false
+    
+    @IBOutlet weak var player1NameLabel: UILabel!
     
     var whoseTurn: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        player1NameLabel.text = player1Name
         // Do any additional setup after loading the view.
     }
 
@@ -208,14 +209,43 @@ class GameViewController: UIViewController {
         default:
             print("hi")
         }
-        
+
         //Check if game has ended and if not display next players name.
         if(gameOn)
         {
-        turnLabel.text = "Player \(whoseTurn) Turn"
+            if(vsAI)
+            {
+                gameOn = false
+                turnLabel.text = "AI's Turn"
+
+                DispatchQueue.main.asyncAfter(
+                    deadline: .now() + 0.5,
+                    execute: {self.AITurn()})
+                
+            }
+            else
+            {
+                turnLabel.text = "Player \(whoseTurn) Turn"
+            }
         }
         }
     }
+    
+    func AITurn()
+    {
+        
+        //CHECK IF THE MIDDLE POINT IS TAKEN
+        if(grid[4] == 0)
+        {
+            button4.setImage(UIImage(named: "Cross"), for: .normal)
+            grid[4] = 2
+        }
+        
+        whoseTurn = 1;
+        turnLabel.text = "Player \(whoseTurn) Turn"
+        gameOn = true
+    }
+    
     
     
     func CheckGrid()
@@ -283,15 +313,5 @@ class GameViewController: UIViewController {
         button7.setImage(UIImage(), for: .normal)
         button8.setImage(UIImage(), for: .normal)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
