@@ -10,9 +10,11 @@ import UIKit
 
 //SETUP GLOBAL VARIABLES TO BE USED THROUGHOUT THE APP
 var player1Name = ""
+var player1Score = 0
 var player1Image = UIImage()
 
 var player2Name = ""
+var player2Score = 0
 var player2Image = UIImage()
 
 var vsAI = false

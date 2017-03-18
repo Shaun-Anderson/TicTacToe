@@ -30,11 +30,15 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var player1NameLabel: UILabel!
     
+    @IBOutlet weak var player2NameLabel: UILabel!
+    
     var whoseTurn: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         player1NameLabel.text = player1Name
+        player2NameLabel.text = player2Name
+        print(player2Name)
         // Do any additional setup after loading the view.
     }
 
