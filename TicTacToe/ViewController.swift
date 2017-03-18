@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        vsAI = false
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -31,6 +32,9 @@ class ViewController: UIViewController {
         vsAI = true
     }
     
+    @IBAction func exitButtonPressed(_ sender: UIButton) {
+        exit(1)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

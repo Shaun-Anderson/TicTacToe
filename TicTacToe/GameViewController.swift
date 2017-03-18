@@ -262,7 +262,7 @@ class GameViewController: UIViewController {
         }
         
         //CHECK IF FOR TOP WIN FROM PLAYER
-        if(grid[0] == 1 && grid[1] == 1)
+        if(grid[0] == 1 && grid[1] == 1 )
         {
             button2.setImage(player2Image, for: .normal)
             grid[2] = 2
@@ -284,11 +284,10 @@ class GameViewController: UIViewController {
             button5.setImage(player2Image, for: .normal)
             grid[5] = 2
         }
-        
+        CheckGrid()
         whoseTurn = 1;
         turnLabel.text = "Player \(whoseTurn) Turn"
         gameOn = true
-        CheckGrid()
     }
     
     func CheckGrid()
@@ -325,7 +324,11 @@ class GameViewController: UIViewController {
         
         //HORIZONTAL BOTTON CHECK
         
+        //VERTICAL LEFT CHECK
         
+        //VERTICAL MIDDLE CHECK
+        
+        //VERTICAL RIGHT CHECK
         
         //Check if a space is still clear
         for i in grid
