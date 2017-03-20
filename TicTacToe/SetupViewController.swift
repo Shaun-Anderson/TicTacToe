@@ -9,9 +9,12 @@
 import UIKit
 
 class SetupViewController: UIViewController {
-
+    
+    //MARK: Properties
     @IBOutlet weak var player2NameTextfield: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var player2NameLabel: UILabel!
+    @IBOutlet weak var selectIconLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,9 @@ class SetupViewController: UIViewController {
         {
             titleLabel.text = "PLAYER VS COMPUTER"
             player2NameTextfield.isHidden = true
+            player2NameLabel.isHidden = true
             player2Name = "COMPUTER"
+            selectIconLabel.text = "SELECT ICON"
         }
         else
         {

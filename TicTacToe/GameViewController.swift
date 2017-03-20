@@ -53,11 +53,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
             case 1:
@@ -70,11 +74,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
             case 2:
@@ -86,11 +94,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
             case 3:
@@ -102,11 +114,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
                 
@@ -120,11 +136,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
                 
@@ -139,11 +159,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
             case 6:
@@ -156,11 +180,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
             case 7:
@@ -173,11 +201,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
             case 8:
@@ -190,11 +222,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
+                        player1NameLabel.backgroundColor = UIColor.white
+                        player2NameLabel.backgroundColor = UIColor.gray
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
+                        player2NameLabel.backgroundColor = UIColor.white
+                        player1NameLabel.backgroundColor = UIColor.gray
                     }
                 }
             default:
@@ -225,6 +261,10 @@ class GameViewController: UIViewController {
     {
         gameOn = true
         restartButton.isHidden = true
+        
+        player1NameLabel.backgroundColor = UIColor.gray
+        player2NameLabel.backgroundColor = UIColor.white
+        
         grid = [Int](arrayLiteral: 0,0,0,0,0,0,0,0,0)
         turnLabel.text = "Player 1 Turn"
         whoseTurn = 1
@@ -245,6 +285,7 @@ class GameViewController: UIViewController {
     {
         super.viewDidLoad()
         player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+        player1NameLabel.backgroundColor = UIColor.gray
         player2NameLabel.text = "\(player2Name): \n \(player2Score)"
         tieLabel.text = "TIE: \n \(tie)"
     }
@@ -284,7 +325,20 @@ class GameViewController: UIViewController {
             button5.setImage(player2Image, for: .normal)
             grid[5] = 2
         }
+        if(grid[3] == 1 && grid[5] == 1)
+        {
+            button4.setImage(player2Image, for: .normal)
+            grid[4] = 2
+        }
+        if(grid[4] == 1 && grid[5] == 1)
+        {
+            button4.setImage(player2Image, for: .normal)
+            grid[3] = 2
+        }
+        
         CheckGrid()
+        player2NameLabel.backgroundColor = UIColor.white
+        player1NameLabel.backgroundColor = UIColor.gray
         whoseTurn = 1;
         turnLabel.text = "Player \(whoseTurn) Turn"
         gameOn = true
@@ -305,13 +359,14 @@ class GameViewController: UIViewController {
             {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
-                player1NameLabel.text = "\(player1Name): \(player1Score)"
+                player1NameLabel.text = "\(player1Name): \n \(player1Score)"
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
-                player2NameLabel.text = "\(player2Name): \(player2Score)"            }
+                player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+            }
         }
         
         //HORIZONAL MIDDLE CHECK
@@ -319,10 +374,38 @@ class GameViewController: UIViewController {
         {
             gameOn = false
             restartButton.isHidden = false
-            turnLabel.text = "PLAYER 1 wins"
+            if(whoseTurn == 1)
+            {
+                turnLabel.text = "\(player1Name) wins"
+                player1Score += 1
+                player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+            }
+            else
+            {
+                turnLabel.text = "\(player2Name) wins"
+                player2Score += 1
+                player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+            }
         }
         
         //HORIZONTAL BOTTON CHECK
+        if(grid[6] == whoseTurn && grid[7] == whoseTurn && grid[8] == whoseTurn)
+        {
+            gameOn = false
+            restartButton.isHidden = false
+            if(whoseTurn == 1)
+            {
+                turnLabel.text = "\(player1Name) wins"
+                player1Score += 1
+                player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+            }
+            else
+            {
+                turnLabel.text = "\(player2Name) wins"
+                player2Score += 1
+                player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+            }
+        }
         
         //VERTICAL LEFT CHECK
         
