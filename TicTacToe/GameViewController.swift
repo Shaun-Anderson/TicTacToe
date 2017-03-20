@@ -26,12 +26,16 @@ class GameViewController: UIViewController {
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var tieLabel: UILabel!
     
+    @IBOutlet weak var exitButton: UIButton!
+    
     //MARK: Variables
     var grid = [Int](arrayLiteral: 0,0,0,0,0,0,0,0,0)
     var isSpace = true
     var gameOn = true
     var whoseTurn: Int = 1
     var tie: Int = 0
+    var player1Score = 0
+    var player2Score = 0
     
     //MARK: Actions
     @IBAction func ButtonPressed(_ sender: UIButton)
@@ -261,6 +265,7 @@ class GameViewController: UIViewController {
     {
         gameOn = true
         restartButton.isHidden = true
+        exitButton.isHidden = true
         
         player1NameLabel.backgroundColor = UIColor.gray
         player2NameLabel.backgroundColor = UIColor.white
@@ -288,6 +293,10 @@ class GameViewController: UIViewController {
         player1NameLabel.backgroundColor = UIColor.gray
         player2NameLabel.text = "\(player2Name): \n \(player2Score)"
         tieLabel.text = "TIE: \n \(tie)"
+        
+        //SET SCORES TO ZERO
+        player1Score = 0
+        player2Score = 0
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -393,6 +402,7 @@ class GameViewController: UIViewController {
         {
             gameOn = false
             restartButton.isHidden = false
+            exitButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
