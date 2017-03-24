@@ -60,6 +60,25 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
                 }
             case 1:
                 if(grid[1] == 0)
@@ -81,6 +100,27 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
+                    
+                    
                 }
             case 2:
                 if(grid[2] == 0)
@@ -101,6 +141,27 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
+                    
+                    
                 }
             case 3:
                 if(grid[3] == 0)
@@ -121,6 +182,27 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
+                    
+                    
                 }
                 
             case 4:
@@ -143,6 +225,26 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
+                    
                 }
                 
                 
@@ -166,6 +268,26 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
+                    
                 }
             case 6:
                 if(grid[6] == 0)
@@ -187,6 +309,26 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
+                    
                 }
             case 7:
                 if(grid[7] == 0)
@@ -208,6 +350,26 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
+                    
                 }
             case 8:
                 if(grid[8] == 0)
@@ -229,36 +391,37 @@ class GameViewController: UIViewController {
                         player2NameLabel.backgroundColor = UIColor.white
                         player1NameLabel.backgroundColor = UIColor.lightGray
                     }
+                    
+                    //Check if game has ended and if not display next players name.
+                    if(gameOn)
+                    {
+                        if(vsAI)
+                        {
+                            gameOn = false
+                            turnLabel.text = "AI's Turn"
+                            
+                            DispatchQueue.main.asyncAfter(
+                                deadline: .now() + 0.5,
+                                execute: {self.AITurn()})
+                            
+                        }
+                        else
+                        {
+                            turnLabel.text = "Player \(whoseTurn) Turn"
+                        }
+                    }
                 }
             default:
                 print("hi")
             }
             
-            //Check if game has ended and if not display next players name.
-            if(gameOn)
-            {
-                if(vsAI)
-                {
-                    gameOn = false
-                    turnLabel.text = "AI's Turn"
-                    
-                    DispatchQueue.main.asyncAfter(
-                        deadline: .now() + 0.5,
-                        execute: {self.AITurn()})
-                    
-                }
-                else
-                {
-                    turnLabel.text = "Player \(whoseTurn) Turn"
-                }
-            }
         }
     }
     @IBAction func restartGame(_ sender: UIButton)
     {
         gameOn = true
         restartButton.isHidden = true
-        exitButton.isHidden = true
+        //exitButton.isHidden = true
         
         player1NameLabel.backgroundColor = UIColor.gray
         player2NameLabel.backgroundColor = UIColor.white
@@ -297,7 +460,8 @@ class GameViewController: UIViewController {
         while done != true
         {
             let randomInt = Int(arc4random_uniform(9))
-            print(randomInt)            //CHECK IF FOR TOP WIN FROM PLAYER
+            
+            //CHECK IF FOR TOP WIN FROM PLAYER
             if(grid[0] == 1 && grid[1] == 1 && grid[2] == 0)
             {
                 buttons[2].setImage(player2Image, for: .normal)
@@ -359,13 +523,16 @@ class GameViewController: UIViewController {
                 }
             }
         }
-        
-        turnLabel.text = "Player \(whoseTurn) Turn"
-        CheckGrid()
-        player2NameLabel.backgroundColor = UIColor.white
-        player1NameLabel.backgroundColor = UIColor.lightGray
-        whoseTurn = 1;
         gameOn = true
+        CheckGrid()
+        if(gameOn == true)
+        {
+            player2NameLabel.backgroundColor = UIColor.white
+            player1NameLabel.backgroundColor = UIColor.lightGray
+            whoseTurn = 1;
+            turnLabel.text = "Player \(whoseTurn) Turn"
+        }
+
     }
     
     func CheckGrid()
@@ -479,7 +646,47 @@ class GameViewController: UIViewController {
         {
             gameOn = false
             restartButton.isHidden = false
-            exitButton.isHidden = false
+            //exitButton.isHidden = false
+            if(whoseTurn == 1)
+            {
+                turnLabel.text = "\(player1Name) wins"
+                player1Score += 1
+                player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+            }
+            else
+            {
+                turnLabel.text = "\(player2Name) wins"
+                player2Score += 1
+                player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+            }
+        }
+        
+        //RIGHT DIAGONAL CHECK
+        if(grid[0] == whoseTurn && grid[4] == whoseTurn && grid[8] == whoseTurn)
+        {
+            gameOn = false
+            restartButton.isHidden = false
+            //exitButton.isHidden = false
+            if(whoseTurn == 1)
+            {
+                turnLabel.text = "\(player1Name) wins"
+                player1Score += 1
+                player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+            }
+            else
+            {
+                turnLabel.text = "\(player2Name) wins"
+                player2Score += 1
+                player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+            }
+        }
+        
+        //LEFT DIAGONAL CHECK
+        if(grid[2] == whoseTurn && grid[4] == whoseTurn && grid[6] == whoseTurn)
+        {
+            gameOn = false
+            restartButton.isHidden = false
+            //exitButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
@@ -502,12 +709,12 @@ class GameViewController: UIViewController {
                 isSpace = true
             }
         }
-        // if no space is found it is a draw
-        if(!isSpace)
+        // If the grid check has not found that a player has won and that there are no spaces left a tie is called.
+        if(!isSpace && gameOn == true)
         {
             gameOn = false
             restartButton.isHidden = false
-            exitButton.isHidden = false
+            //exitButton.isHidden = false
             turnLabel.text = "No spaces left - TIE"
             tie += 1
             tieLabel.text = "TIE: \n \(tie)"
