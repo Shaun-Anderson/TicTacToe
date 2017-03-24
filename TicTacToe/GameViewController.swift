@@ -29,7 +29,7 @@ class GameViewController: UIViewController {
     var tie: Int = 0
     var player1Score = 0
     var player2Score = 0
-    
+    var aiHelp : [Int] = [0,1,2,3,4,5,6,7,8]
     //MARK: Actions
     @IBAction func ButtonPressed(_ sender: UIButton)
     {
@@ -292,53 +292,79 @@ class GameViewController: UIViewController {
     }
     func AITurn()
     {
+        var done = false
         
-        //CHECK IF THE MIDDLE POINT IS TAKEN
-        if(grid[4] == 0)
+        while done != true
         {
-            buttons[4].setImage(player2Image, for: .normal)
-            grid[4] = 2
+            let randomInt = Int(arc4random_uniform(9))
+            print(randomInt)            //CHECK IF FOR TOP WIN FROM PLAYER
+            if(grid[0] == 1 && grid[1] == 1 && grid[2] == 0)
+            {
+                buttons[2].setImage(player2Image, for: .normal)
+                grid[2] = 2
+                done = true
+                break
+            }
+            if(grid[1] == 1 && grid[2] == 1 && grid[0] == 0)
+            {
+                buttons[0].setImage(player2Image, for: .normal)
+                grid[0] = 2
+                done = true
+                break
+            }
+            if(grid[0] == 1 && grid[2] == 1 && grid[1] == 0)
+            {
+                buttons[1].setImage(player2Image, for: .normal)
+                grid[1] = 2
+                done = true
+                break
+            }
+            
+            //CHECK FOR HORIZONAL MIDDLE WIN FROM PLAYER
+            if(grid[3] == 1 && grid[4] == 1 && grid[5] == 0)
+            {
+                buttons[5].setImage(player2Image, for: .normal)
+                grid[5] = 2
+                done = true
+                break
+            }
+            if(grid[3] == 1 && grid[5] == 1 && grid[4] == 0)
+            {
+                buttons[4].setImage(player2Image, for: .normal)
+                grid[4] = 2
+                done = true
+                break
+            }
+            if(grid[4] == 1 && grid[5] == 1 && grid[3] == 0)
+            {
+                buttons[3].setImage(player2Image, for: .normal)
+                grid[3] = 2
+                done = true
+                break
+            }
+            
+            if(grid[4] == 0)
+            {
+                buttons[4].setImage(player2Image, for: .normal)
+                grid[4] = 2
+                done = true
+            }
+            else
+            {
+                if(grid[randomInt] == 0)
+                {
+                    buttons[randomInt].setImage(player2Image, for: .normal)
+                    grid[randomInt] = 2
+                    done = true
+                }
+            }
         }
         
-        //CHECK IF FOR TOP WIN FROM PLAYER
-        if(grid[0] == 1 && grid[1] == 1 )
-        {
-            buttons[2].setImage(player2Image, for: .normal)
-            grid[2] = 2
-        }
-        if(grid[1] == 1 && grid[2] == 1)
-        {
-            buttons[0].setImage(player2Image, for: .normal)
-            grid[0] = 2
-        }
-        if(grid[0] == 1 && grid[2] == 1)
-        {
-            buttons[1].setImage(player2Image, for: .normal)
-            grid[1] = 2
-        }
-        
-        //CHECK FOR HORIZONAL MIDDLE WIN FROM PLAYER
-        if(grid[3] == 1 && grid[4] == 1)
-        {
-            buttons[5].setImage(player2Image, for: .normal)
-            grid[5] = 2
-        }
-        if(grid[3] == 1 && grid[5] == 1)
-        {
-            buttons[4].setImage(player2Image, for: .normal)
-            grid[4] = 2
-        }
-        if(grid[4] == 1 && grid[5] == 1)
-        {
-            buttons[3].setImage(player2Image, for: .normal)
-            grid[3] = 2
-        }
-        
+        turnLabel.text = "Player \(whoseTurn) Turn"
         CheckGrid()
         player2NameLabel.backgroundColor = UIColor.white
         player1NameLabel.backgroundColor = UIColor.lightGray
         whoseTurn = 1;
-        turnLabel.text = "Player \(whoseTurn) Turn"
         gameOn = true
     }
     
