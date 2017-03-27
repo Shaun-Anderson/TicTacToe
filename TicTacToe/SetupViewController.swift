@@ -47,8 +47,8 @@ class SetupViewController: UIViewController {
         //setup inital values incase player just hits start game
         
         player1Name = "PLAYER 1"
-        player1Image = UIImage(named: "Cross")!
-        player2Image = UIImage(named: "Circle")!
+        player1Image = UIImage(named: "X")!
+        player2Image = UIImage(named: "O")!
         crossButton.backgroundColor = UIColor.gray
         circleButton.backgroundColor = UIColor.darkGray
         }
@@ -122,14 +122,14 @@ class SetupViewController: UIViewController {
         if(sender.tag == 0)
         {
             player1Image = sender.currentImage!
-            player2Image = UIImage(named: "Circle")!
+            player2Image = UIImage(named: "O")!
             sender.backgroundColor = UIColor.gray
             circleButton.backgroundColor = UIColor.darkGray
         }
         else
         {
             player1Image = sender.currentImage!
-            player2Image = UIImage(named: "Cross")!
+            player2Image = UIImage(named: "X")!
             sender.backgroundColor = UIColor.gray
             crossButton.backgroundColor = UIColor.darkGray
         }
