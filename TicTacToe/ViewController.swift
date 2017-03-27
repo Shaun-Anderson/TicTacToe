@@ -16,6 +16,7 @@ var player2Name = ""
 var player2Image = UIImage()
 
 var vsAI = false
+var AIEasy = true
 
 class ViewController: UIViewController {
 
