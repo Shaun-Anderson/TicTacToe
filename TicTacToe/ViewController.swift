@@ -18,11 +18,16 @@ var player2Image = UIImage()
 var vsAI = false
 var AIEasy = true
 
+var checkHistory = false
+var history : NSMutableString = ""
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         vsAI = false
+        checkHistory = false
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -34,6 +39,11 @@ class ViewController: UIViewController {
     @IBAction func exitButtonPressed(_ sender: UIButton) {
         exit(1)
     }
+    
+    @IBAction func historyButtonPressed(_ sender: UIButton) {
+        checkHistory = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

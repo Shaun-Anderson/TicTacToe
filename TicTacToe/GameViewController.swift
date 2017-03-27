@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GameViewController: UIViewController {
     
@@ -449,6 +450,9 @@ class GameViewController: UIViewController {
         //SET SCORES TO ZERO
         player1Score = 0
         player2Score = 0
+        
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -539,7 +543,7 @@ class GameViewController: UIViewController {
     {
         //Make isSpace false and check against grid array to see if there are any spaces left
         isSpace = false
-        
+        print("hi")
         
         //HORIZONTAL TOP CHECK
         if(grid[0] == whoseTurn && grid[1] == whoseTurn && grid[2] == whoseTurn)
@@ -552,12 +556,14 @@ class GameViewController: UIViewController {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+                save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+                save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
         }
         
@@ -572,12 +578,14 @@ class GameViewController: UIViewController {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+                save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+                save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
         }
         
@@ -592,12 +600,14 @@ class GameViewController: UIViewController {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+                save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+                save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
         }
         
@@ -612,12 +622,14 @@ class GameViewController: UIViewController {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+                save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+                save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
         }
         
@@ -632,12 +644,14 @@ class GameViewController: UIViewController {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+                save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+                save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
         }
         
@@ -646,18 +660,20 @@ class GameViewController: UIViewController {
         {
             gameOn = false
             restartButton.isHidden = false
-            //exitButton.isHidden = false
+            exitButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+                save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+                save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
         }
         
@@ -666,18 +682,20 @@ class GameViewController: UIViewController {
         {
             gameOn = false
             restartButton.isHidden = false
-            //exitButton.isHidden = false
+            exitButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+                save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+                save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
         }
         
@@ -686,18 +704,20 @@ class GameViewController: UIViewController {
         {
             gameOn = false
             restartButton.isHidden = false
-            //exitButton.isHidden = false
+            exitButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+                save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
             }
             else
             {
                 turnLabel.text = "\(player2Name) wins"
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+                save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
         }
         
@@ -722,5 +742,21 @@ class GameViewController: UIViewController {
         
     }
     
-
+    func save(name: String)
+    {
+        print(name)
+        guard let AppDelegate = UIApplication.shared.delegate as? AppDelegate else{return}
+        
+        let managedContext = AppDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "History", in: managedContext)
+        let history = NSManagedObject(entity: entity!, insertInto: managedContext)
+        history.setValue(name, forKey: "history")
+        
+        do{
+            try managedContext.save()
+        } catch _ as NSError
+        {
+            print("Error saving")
+        }
+    }
 }
