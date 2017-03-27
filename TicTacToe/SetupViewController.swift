@@ -92,7 +92,7 @@ class SetupViewController: UIViewController {
         if(sender.selectedSegmentIndex == 0)
         {
         AIEasy = true
-        sender.tintColor = UIColor.blue
+        sender.tintColor = UIColor.white
         }
         else
         {
