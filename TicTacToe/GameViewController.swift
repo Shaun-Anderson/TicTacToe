@@ -91,15 +91,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
+                        player1NameLabel.backgroundColor = UIColor.clear
+                        player2NameLabel.backgroundColor = UIColor.cyan
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
+                        player2NameLabel.backgroundColor = UIColor.clear
+                        player1NameLabel.backgroundColor = UIColor.cyan
                     }
                     
                     //Check if game has ended and if not display next players name.
@@ -132,15 +132,15 @@ class GameViewController: UIViewController {
                     {
                         sender.setImage(player1Image, for: .normal)
                         whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
+                        player1NameLabel.backgroundColor = UIColor.clear
+                        player2NameLabel.backgroundColor = UIColor.cyan
                     }
                     else
                     {
                         sender.setImage(player2Image, for: .normal)
                         whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
+                        player2NameLabel.backgroundColor = UIColor.clear
+                        player1NameLabel.backgroundColor = UIColor.cyan
                     }
                     
                     //Check if game has ended and if not display next players name.
@@ -565,6 +565,9 @@ class GameViewController: UIViewController {
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
                 save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
             }
+            buttons[0].backgroundColor = UIColor.purple
+            buttons[1].backgroundColor = UIColor.purple
+            buttons[2].backgroundColor = UIColor.purple
         }
         
         //HORIZONAL MIDDLE CHECK
