@@ -101,63 +101,63 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaf-8U-Jj6" userLabel="1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaf-8U-Jj6" userLabel="1">
                                 <rect key="frame" x="147" y="181" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="UQD-XP-bDC"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="AbH-Gu-IRO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhp-GS-5kN" userLabel="2">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhp-GS-5kN" userLabel="2">
                                 <rect key="frame" x="258" y="181" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="WUq-Tw-aA6"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="Fp9-V2-3LS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejI-Gu-30q" userLabel="3">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejI-Gu-30q" userLabel="3">
                                 <rect key="frame" x="37" y="293" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="xBZ-ke-WAd"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="3YD-sW-tsq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POE-T5-Upr" userLabel="4">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POE-T5-Upr" userLabel="4">
                                 <rect key="frame" x="147" y="293" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="d63-Id-5P5"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="t5t-mO-fKI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5d-X3-SQ8" userLabel="5">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5d-X3-SQ8" userLabel="5">
                                 <rect key="frame" x="258" y="293" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="xrP-ac-b6C"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="92h-Ab-dw6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUr-UJ-gXo" userLabel="6">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUr-UJ-gXo" userLabel="6">
                                 <rect key="frame" x="37" y="407" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="58h-lS-sRf"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="wUg-xf-Akp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqr-Di-bKU" userLabel="7">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqr-Di-bKU" userLabel="7">
                                 <rect key="frame" x="147" y="407" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="8N1-Vz-FVt"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="UJn-Hd-Uyf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYX-rW-hWL" userLabel="8">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZYX-rW-hWL" userLabel="8">
                                 <rect key="frame" x="258" y="407" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="hSb-wx-R5Q"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="3vL-Vj-m3M"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLAYER 1:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIW-px-PvV">
@@ -171,7 +171,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLAYER 2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lry-oh-vjy">
                                 <rect key="frame" x="217" y="20" width="158" height="71"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1803921568627451" green="0.043137254901960784" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.98431372549019602" green="0.0" blue="0.34901960784313724" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -209,7 +209,7 @@
                                 <rect key="frame" x="37" y="181" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="ButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="m73-wj-iYR"/>
+                                    <action selector="GridButtonPressed:" destination="NlG-B4-vAP" eventType="touchUpInside" id="Gwp-0n-Tzb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Player 1 Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QId-l1-t1G">
@@ -338,16 +338,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvJ-Me-njp">
-                                <rect key="frame" x="10" y="120" width="57" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKN-I0-Nbe">
-                                <rect key="frame" x="10" y="208" width="57" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLAYER 2:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0G-Ce-hWr">
                                 <rect key="frame" x="81" y="206" width="246" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -380,7 +370,7 @@
                                 </subviews>
                             </view>
                             <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pke-7X-TCz">
-                                <rect key="frame" x="64" y="235" width="246" height="29"/>
+                                <rect key="frame" x="81" y="235" width="246" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.23963553000000001" green="0.068527329560000003" blue="0.24463141029999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
@@ -392,6 +382,14 @@
                                     <action selector="difficultySet:" destination="Q3G-ei-fYe" eventType="valueChanged" id="AQv-Nd-kcp"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-6f-xx0">
+                                <rect key="frame" x="16" y="132" width="64" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="iconPressed:" destination="Q3G-ei-fYe" eventType="touchUpInside" id="0ks-1x-XcK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1150995216" green="0.033275476460000002" blue="0.11848958330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
@@ -406,6 +404,7 @@
                         <outlet property="difficultySegment" destination="pke-7X-TCz" id="GyE-MG-TVO"/>
                         <outlet property="historyTextView" destination="YUr-1O-7SH" id="pcK-As-MnR"/>
                         <outlet property="historyView" destination="nl5-aH-jDI" id="GhL-sy-fsT"/>
+                        <outlet property="player1IconImage" destination="tfc-6f-xx0" id="0uH-cG-b1G"/>
                         <outlet property="player2NameLabel" destination="U0G-Ce-hWr" id="TKt-Uw-ROx"/>
                         <outlet property="player2NameTextfield" destination="hpC-nU-Skz" id="mNM-AF-0su"/>
                         <outlet property="selectIconLabel" destination="stN-CJ-5ic" id="mx1-5C-QO4"/>
@@ -424,6 +423,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="uSt-wd-5Vu"/>
-        <segue reference="R3x-iY-jMe"/>
+        <segue reference="24q-fP-4T6"/>
     </inferredMetricsTieBreakers>
 </document>

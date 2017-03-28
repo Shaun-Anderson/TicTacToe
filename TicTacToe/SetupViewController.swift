@@ -9,8 +9,11 @@
 import UIKit
 import CoreData
 
-class SetupViewController: UIViewController {
+class SetupViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    
+
+    @IBOutlet weak var player1IconImage: UIButton!
     //MARK: Properties
     @IBOutlet weak var player2NameTextfield: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
@@ -136,6 +139,34 @@ class SetupViewController: UIViewController {
     }
 
     
+    @IBAction func iconPressed(_ sender: UIButton)
+    {
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        image.allowsEditing = false
+        self.present(image, animated: true)
+        {
+                        
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        
+        if let foundImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+        {
+            player1Icon = foundImage
+        
+            player1IconImage.setBackgroundImage(player1Icon, for: .normal)
+            print("COMPLETE")
+        }
+        else
+        {
+            print("ERRRROR")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         
         //DELETE SAVED GAMES

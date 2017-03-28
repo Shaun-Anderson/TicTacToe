@@ -19,11 +19,9 @@ class GameViewController: UIViewController {
     @IBOutlet weak var player2NameLabel: UILabel!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var tieLabel: UILabel!
-    
     @IBOutlet weak var exitButton: UIButton!
     
     //MARK: Variables
-    var grid = [Int](arrayLiteral: 0,0,0,0,0,0,0,0,0)
     var isSpace = true
     var gameOn = true
     var whoseTurn: Int = 1
@@ -31,393 +29,8 @@ class GameViewController: UIViewController {
     var player1Score = 0
     var player2Score = 0
     var aiHelp : [Int] = [0,1,2,3,4,5,6,7,8]
+    
     //MARK: Actions
-    @IBAction func ButtonPressed(_ sender: UIButton)
-    {
-        //Called when a button on the grid is pressed and will change the image and value in array to the specific player.
-        if(gameOn == true)
-        {
-            switch sender.tag
-            {
-            case 0:
-                //Check if a player or the computer has not already taken this node of the grid and then change its value and image to reflect the player.
-                if(grid[0] == 0)
-                {
-                    
-                    grid[0] = whoseTurn
-                    CheckGrid()
-                    //Change Image of button
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                }
-            case 1:
-                if(grid[1] == 0)
-                {
-                    grid[1] = whoseTurn
-                    CheckGrid()
-                    //Change Image of button
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.clear
-                        player2NameLabel.backgroundColor = UIColor.cyan
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.clear
-                        player1NameLabel.backgroundColor = UIColor.cyan
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                    
-                    
-                }
-            case 2:
-                if(grid[2] == 0)
-                {
-                    grid[2] = whoseTurn
-                    CheckGrid()
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.clear
-                        player2NameLabel.backgroundColor = UIColor.cyan
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.clear
-                        player1NameLabel.backgroundColor = UIColor.cyan
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                    
-                    
-                }
-            case 3:
-                if(grid[3] == 0)
-                {
-                    grid[3] = whoseTurn
-                    CheckGrid()
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                    
-                    
-                }
-                
-            case 4:
-                if(grid[4] == 0)
-                {
-                    grid[4] = whoseTurn
-                    CheckGrid()
-                    //Change Image of button
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                    
-                }
-                
-                
-            case 5:
-                if(grid[5] == 0)
-                {
-                    grid[5] = whoseTurn
-                    CheckGrid()
-                    //Change Image of button
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                    
-                }
-            case 6:
-                if(grid[6] == 0)
-                {
-                    grid[6] = whoseTurn
-                    CheckGrid()
-                    //Change Image of button
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                    
-                }
-            case 7:
-                if(grid[7] == 0)
-                {
-                    grid[7] = whoseTurn
-                    CheckGrid()
-                    //Change Image of button
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                    
-                }
-            case 8:
-                if(grid[8] == 0)
-                {
-                    grid[8] = whoseTurn
-                    CheckGrid()
-                    //Change Image of button
-                    if(whoseTurn == 1)
-                    {
-                        sender.setImage(player1Image, for: .normal)
-                        whoseTurn = 2
-                        player1NameLabel.backgroundColor = UIColor.white
-                        player2NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    else
-                    {
-                        sender.setImage(player2Image, for: .normal)
-                        whoseTurn = 1
-                        player2NameLabel.backgroundColor = UIColor.white
-                        player1NameLabel.backgroundColor = UIColor.lightGray
-                    }
-                    
-                    //Check if game has ended and if not display next players name.
-                    if(gameOn)
-                    {
-                        if(vsAI)
-                        {
-                            gameOn = false
-                            turnLabel.text = "AI's Turn"
-                            
-                            DispatchQueue.main.asyncAfter(
-                                deadline: .now() + 0.5,
-                                execute: {self.AITurn()})
-                            
-                        }
-                        else
-                        {
-                            turnLabel.text = "Player \(whoseTurn) Turn"
-                        }
-                    }
-                }
-            default:
-                print("hi")
-            }
-            
-        }
-    }
     @IBAction func restartGame(_ sender: UIButton)
     {
         gameOn = true
@@ -427,7 +40,6 @@ class GameViewController: UIViewController {
         player1NameLabel.backgroundColor = UIColor.gray
         player2NameLabel.backgroundColor = UIColor.white
         
-        grid = [Int](arrayLiteral: 0,0,0,0,0,0,0,0,0)
         turnLabel.text = "Player 1 Turn"
         whoseTurn = 1
         
@@ -435,6 +47,7 @@ class GameViewController: UIViewController {
         for button in buttons
         {
             button.setImage(UIImage(), for: .normal)
+            button.isUserInteractionEnabled = true
         }
     }
     
@@ -465,64 +78,64 @@ class GameViewController: UIViewController {
         {
             let randomInt = Int(arc4random_uniform(9))
             
-            //CHECK IF FOR TOP WIN FROM PLAYER
-            if(grid[0] == 1 && grid[1] == 1 && grid[2] == 0)
+            //Check for top potential win from player
+            if(buttons[0].tag == 1 && buttons[1].tag == 1 && buttons[2].tag == 0)
             {
                 buttons[2].setImage(player2Image, for: .normal)
-                grid[2] = 2
+                buttons[2].tag = 2
                 done = true
                 break
             }
-            if(grid[1] == 1 && grid[2] == 1 && grid[0] == 0)
+            if(buttons[1].tag == 1 && buttons[2].tag == 1 && buttons[0].tag == 0)
             {
                 buttons[0].setImage(player2Image, for: .normal)
-                grid[0] = 2
+                buttons[0].tag = 2
                 done = true
                 break
             }
-            if(grid[0] == 1 && grid[2] == 1 && grid[1] == 0)
+            if(buttons[0].tag == 1 && buttons[2].tag == 1 && buttons[1].tag == 0)
             {
                 buttons[1].setImage(player2Image, for: .normal)
-                grid[1] = 2
+                buttons[1].tag = 2
                 done = true
                 break
             }
             
             //CHECK FOR HORIZONAL MIDDLE WIN FROM PLAYER
-            if(grid[3] == 1 && grid[4] == 1 && grid[5] == 0)
+            if(buttons[3].tag == 1 && buttons[4].tag == 1 && buttons[5].tag == 0)
             {
                 buttons[5].setImage(player2Image, for: .normal)
-                grid[5] = 2
+                buttons[5].tag = 2
                 done = true
                 break
             }
-            if(grid[3] == 1 && grid[5] == 1 && grid[4] == 0)
+            if(buttons[3].tag == 1 && buttons[5].tag == 1 && buttons[4].tag == 0)
             {
                 buttons[4].setImage(player2Image, for: .normal)
-                grid[4] = 2
+                buttons[4].tag = 2
                 done = true
                 break
             }
-            if(grid[4] == 1 && grid[5] == 1 && grid[3] == 0)
+            if(buttons[4].tag == 1 && buttons[5].tag == 1 && buttons[3].tag == 0)
             {
                 buttons[3].setImage(player2Image, for: .normal)
-                grid[3] = 2
+                buttons[3].tag = 2
                 done = true
                 break
             }
             
-            if(grid[4] == 0)
+            if(buttons[4].tag == 0)
             {
                 buttons[4].setImage(player2Image, for: .normal)
-                grid[4] = 2
+                buttons[4].tag = 2
                 done = true
             }
             else
             {
-                if(grid[randomInt] == 0)
+                if(buttons[randomInt].tag == 0)
                 {
                     buttons[randomInt].setImage(player2Image, for: .normal)
-                    grid[randomInt] = 2
+                    buttons[randomInt].tag = 2
                     done = true
                 }
             }
@@ -546,7 +159,7 @@ class GameViewController: UIViewController {
         print("hi")
         
         //HORIZONTAL TOP CHECK
-        if(grid[0] == whoseTurn && grid[1] == whoseTurn && grid[2] == whoseTurn)
+        if(buttons[0].tag == whoseTurn && buttons[1].tag == whoseTurn && buttons[2].tag == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
@@ -571,7 +184,7 @@ class GameViewController: UIViewController {
         }
         
         //HORIZONAL MIDDLE CHECK
-        if(grid[3] == whoseTurn && grid[4] == whoseTurn && grid[5] == whoseTurn)
+        if(buttons[3].tag == whoseTurn && buttons[4].tag == whoseTurn && buttons[5].tag == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
@@ -593,7 +206,7 @@ class GameViewController: UIViewController {
         }
         
         //HORIZONTAL BOTTON CHECK
-        if(grid[6] == whoseTurn && grid[7] == whoseTurn && grid[8] == whoseTurn)
+        if(buttons[6].tag == whoseTurn && buttons[7].tag == whoseTurn && buttons[8].tag == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
@@ -615,7 +228,7 @@ class GameViewController: UIViewController {
         }
         
         //VERTICAL LEFT CHECK
-        if(grid[0] == whoseTurn && grid[3] == whoseTurn && grid[6] == whoseTurn)
+        if(buttons[0].tag == whoseTurn && buttons[3].tag == whoseTurn && buttons[6].tag == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
@@ -637,7 +250,7 @@ class GameViewController: UIViewController {
         }
         
         //VERTICAL MIDDLE CHECK
-        if(grid[1] == whoseTurn && grid[4] == whoseTurn && grid[7] == whoseTurn)
+        if(buttons[1].tag == whoseTurn && buttons[4].tag == whoseTurn && buttons[7].tag == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
@@ -659,7 +272,7 @@ class GameViewController: UIViewController {
         }
         
         //VERTICAL RIGHT CHECK
-        if(grid[2] == whoseTurn && grid[5] == whoseTurn && grid[8] == whoseTurn)
+        if(buttons[2].tag == whoseTurn && buttons[5].tag == whoseTurn && buttons[8].tag == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
@@ -681,7 +294,7 @@ class GameViewController: UIViewController {
         }
         
         //RIGHT DIAGONAL CHECK
-        if(grid[0] == whoseTurn && grid[4] == whoseTurn && grid[8] == whoseTurn)
+        if(buttons[0].tag == whoseTurn && buttons[4].tag == whoseTurn && buttons[8].tag == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
@@ -703,7 +316,7 @@ class GameViewController: UIViewController {
         }
         
         //LEFT DIAGONAL CHECK
-        if(grid[2] == whoseTurn && grid[4] == whoseTurn && grid[6] == whoseTurn)
+        if(buttons[2].tag == whoseTurn && buttons[4].tag == whoseTurn && buttons[6].tag == whoseTurn)
         {
             gameOn = false
             restartButton.isHidden = false
@@ -724,10 +337,10 @@ class GameViewController: UIViewController {
             }
         }
         
-        //Check if a space is still clear
-        for i in grid
+        //Check if a space is still clear on the grid
+        for i in buttons
         {
-            if(i == 0)
+            if(i.tag == 0)
             {
                 isSpace = true
             }
@@ -745,6 +358,8 @@ class GameViewController: UIViewController {
         
     }
     
+    
+    //Save function for end result.
     func save(name: String)
     {
         print(name)
@@ -760,6 +375,50 @@ class GameViewController: UIViewController {
         } catch _ as NSError
         {
             print("Error saving")
+        }
+    }
+    
+    @IBAction func GridButtonPressed(_ sender: UIButton)
+    {
+        //Called when a button on the grid is pressed and will change the image and value in array to the specific player.
+        if(gameOn == true && sender.tag == 0)
+        {
+                //Check if a player or the computer has not already taken this node of the grid and then change its value and image to reflect the player.
+            sender.tag = whoseTurn
+            CheckGrid()
+            //Change Image of button
+            if(whoseTurn == 1)
+            {
+                sender.setImage(player1Image, for: .normal)
+                whoseTurn = 2
+                player1NameLabel.backgroundColor = UIColor.clear
+                player2NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 1.0)
+            }
+            else
+            {
+                sender.setImage(player2Image, for: .normal)
+                whoseTurn = 1
+                player2NameLabel.backgroundColor = UIColor.clear
+                player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 1.0)
+            }
+            sender.isUserInteractionEnabled = false
+            //Check if game has ended and if not display next players name or do AI's turn after delay.
+            if(gameOn)
+            {
+                if(vsAI)
+                {
+                    gameOn = false
+                    turnLabel.text = "AI's Turn"
+                            
+                    DispatchQueue.main.asyncAfter(
+                    deadline: .now() + 0.5,
+                    execute: {self.AITurn()})
+                }
+                else
+                {
+                    turnLabel.text = "Player \(whoseTurn) Turn"
+                }
+            }
         }
     }
 }
