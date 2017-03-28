@@ -53,8 +53,11 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         player1Name = "PLAYER 1"
         player1Image = UIImage(named: "X")!
         player2Image = UIImage(named: "O")!
+        player1ImageName = "X"
+        player2ImageName = "O"
         crossButton.backgroundColor = UIColor.gray
         circleButton.backgroundColor = UIColor.darkGray
+        
         }
         else
         {
@@ -129,6 +132,8 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
             player2Image = UIImage(named: "O")!
             sender.backgroundColor = UIColor.gray
             circleButton.backgroundColor = UIColor.darkGray
+            player1ImageName = "X"
+            player2ImageName = "O"
         }
         else
         {
@@ -136,10 +141,13 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
             player2Image = UIImage(named: "X")!
             sender.backgroundColor = UIColor.gray
             crossButton.backgroundColor = UIColor.darkGray
+            player1ImageName = "O"
+            player2ImageName = "X"
         }
     }
 
     var imagePicked: Int = 0
+    
     @IBAction func iconPressed(_ sender: UIButton)
     {
         imagePicked = sender.tag
@@ -176,6 +184,7 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         
         self.dismiss(animated: true, completion: nil)
     }
+    
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         
         //DELETE SAVED GAMES
@@ -194,9 +203,23 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
             }
         } catch _ as NSError
         {
-            print("ISSUE LOADING")
+            print("ISSUE deleting")
+        }
+        
+        do{
+            try managedContext.save()
+        } catch _ as NSError
+        {
+            print("Error saving")
         }
         history = ""
         historyTextView.text = ""
+    }
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        return .lightContent
     }
 }

@@ -9,17 +9,22 @@
 import UIKit
 
 //SETUP GLOBAL VARIABLES TO BE USED THROUGHOUT THE APP
+
+//Player variables
 var player1Name = ""
+
+var player1ImageName = ""
+
 var player1Icon = UIImage()
 var player1Image = UIImage()
-
 var player2Name = ""
+var player2ImageName = ""
 var player2Icon = UIImage()
 var player2Image = UIImage()
-
+//Ai varaibles
 var vsAI = false
 var AIEasy = true
-
+//History variables
 var checkHistory = false
 var history : NSMutableString = ""
 
@@ -51,6 +56,9 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+           return .lightContent
+    }
 }
 
