@@ -13,7 +13,8 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
     
     
 
-    @IBOutlet weak var player1IconImage: UIButton!
+    @IBOutlet weak var player2IconButton: UIButton!
+    @IBOutlet weak var player1IconButton: UIButton!
     //MARK: Properties
     @IBOutlet weak var player2NameTextfield: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
@@ -138,9 +139,10 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         }
     }
 
-    
+    var imagePicked: Int = 0
     @IBAction func iconPressed(_ sender: UIButton)
     {
+        imagePicked = sender.tag
         let image = UIImagePickerController()
         image.delegate = self
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -155,14 +157,21 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         
         if let foundImage = info[UIImagePickerControllerOriginalImage] as? UIImage
         {
+            if(imagePicked == 1)
+            {
             player1Icon = foundImage
         
-            player1IconImage.setBackgroundImage(player1Icon, for: .normal)
-            print("COMPLETE")
+            player1IconButton.setBackgroundImage(player1Icon, for: .normal)
+            }
+            else
+            {
+                player2Icon = foundImage
+                player2IconButton.setBackgroundImage(player2Icon, for: .normal)
+            }
         }
         else
         {
-            print("ERRRROR")
+            print("Error retrieving image from gallery")
         }
         
         self.dismiss(animated: true, completion: nil)

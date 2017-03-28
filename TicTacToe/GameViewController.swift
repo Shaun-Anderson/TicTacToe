@@ -56,7 +56,7 @@ class GameViewController: UIViewController {
     {
         super.viewDidLoad()
         player1NameLabel.text = "\(player1Name): \n \(player1Score)"
-        player1NameLabel.backgroundColor = UIColor.lightGray
+        player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 1.0)
         player2NameLabel.text = "\(player2Name): \n \(player2Score)"
         tieLabel.text = "TIE: \n \(tie)"
         
@@ -399,7 +399,7 @@ class GameViewController: UIViewController {
                 sender.setImage(player2Image, for: .normal)
                 whoseTurn = 1
                 player2NameLabel.backgroundColor = UIColor.clear
-                player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 1.0)
+                player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 2.0)
             }
             sender.isUserInteractionEnabled = false
             //Check if game has ended and if not display next players name or do AI's turn after delay.
