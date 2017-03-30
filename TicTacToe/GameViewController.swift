@@ -11,11 +11,10 @@ import CoreData
 
 class GameViewController: UIViewController {
     
+    //MARK: Properties
     @IBOutlet weak var player1IconImageView: UIImageView!
     @IBOutlet weak var player2IconImageView: UIImageView!
     @IBOutlet var buttons: [UIButton]!
-    //MARK: Properties
-
     @IBOutlet weak var turnLabel: UILabel!
     @IBOutlet weak var player1NameLabel: UILabel!
     @IBOutlet weak var player2NameLabel: UILabel!
@@ -162,7 +161,6 @@ class GameViewController: UIViewController {
     {
         //Make isSpace false and check against grid array to see if there are any spaces left
         isSpace = false
-        print("hi")
         
         //HORIZONTAL TOP CHECK
         if(buttons[0].tag == whoseTurn && buttons[1].tag == whoseTurn && buttons[2].tag == whoseTurn)
