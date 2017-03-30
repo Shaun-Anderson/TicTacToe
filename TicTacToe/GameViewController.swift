@@ -469,7 +469,14 @@ class GameViewController: UIViewController {
                 }
                 else
                 {
-                    turnLabel.text = "Player \(whoseTurn) Turn"
+                    if(whoseTurn == 1)
+                    {
+                        turnLabel.text = "\(player1Name)'s Turn"
+                    }
+                    else
+                    {
+                        turnLabel.text = "\(player2Name)'s Turn"
+                    }
                 }
             }
         }
