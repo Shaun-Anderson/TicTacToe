@@ -167,9 +167,8 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         {
             if(imagePicked == 1)
             {
-            player1Icon = foundImage
-        
-            player1IconButton.setBackgroundImage(player1Icon, for: .normal)
+                player1Icon = foundImage
+                player1IconButton.setBackgroundImage(player1Icon, for: .normal)
             }
             else
             {

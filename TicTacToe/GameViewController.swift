@@ -11,6 +11,8 @@ import CoreData
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var player1IconImageView: UIImageView!
+    @IBOutlet weak var player2IconImageView: UIImageView!
     @IBOutlet var buttons: [UIButton]!
     //MARK: Properties
 
@@ -59,7 +61,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         player1NameLabel.text = "\(player1Name): \n \(player1Score)"
         player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 1.0)
+        player1IconImageView.image = player1Icon
         player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+        player2IconImageView.image = player2Icon
         tieLabel.text = "TIE: \n \(tie)"
         
         //SET SCORES TO ZERO
