@@ -53,7 +53,9 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         
         player1Name = "PLAYER 1"
         player1Image = UIImage(named: "X")!
+        player1Icon = UIImage(named: "UserImage")!
         player2Image = UIImage(named: "O")!
+        player2Icon = UIImage(named: "UserImage")!
         player1ImageName = "X"
         player2ImageName = "O"
         crossButton.backgroundColor = UIColor.gray
