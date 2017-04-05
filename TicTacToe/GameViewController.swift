@@ -149,8 +149,8 @@ class GameViewController: UIViewController {
         CheckGrid()
         if(gameOn == true)
         {
-            player2NameLabel.backgroundColor = UIColor.white
-            player1NameLabel.backgroundColor = UIColor.lightGray
+            player2NameLabel.backgroundColor = UIColor.clear
+            player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 2.0)
             whoseTurn = 1;
             turnLabel.text = "Player \(whoseTurn) Turn"
         }

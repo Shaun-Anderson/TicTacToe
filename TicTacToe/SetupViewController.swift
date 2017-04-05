@@ -38,13 +38,14 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
             player2NameTextfield.isHidden = true
             player2NameLabel.isHidden = true
             player2Name = "COMPUTER"
+            player2IconButton.isUserInteractionEnabled = false
             selectIconLabel.text = "SELECT ICON"
             difficultySegment.isHidden = false
         }
         else
         {
             historyTextView.insertText(history as String)
-            titleLabel.text = "PlAYER VS PLAYER"
+            titleLabel.text = "PLAYER VS PLAYER"
             player2Name = "PLAYER 2"
         }
         

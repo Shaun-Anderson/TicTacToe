@@ -35,7 +35,6 @@ class ViewController: UIViewController {
         vsAI = false
         checkHistory = false
         
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     @IBAction func PvCButton(_ sender: UIButton)
