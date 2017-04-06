@@ -109,7 +109,7 @@ class GameViewController: UIViewController {
             do {
                 try soundPlayer = AVAudioPlayer(contentsOf: url)
                 soundPlayer.play()
-                print("HELOOOOOOO")
+                print("Audio loaded")
                 }
                 catch {print("File not found")}
         }
@@ -407,8 +407,7 @@ class GameViewController: UIViewController {
         if(buttons[3].tag == whoseTurn && buttons[4].tag == whoseTurn && buttons[5].tag == whoseTurn)
         {
             gameOn = false
-            restartButton.isHidden = false
-            exitButton.isHidden = false
+            nextRoundButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
@@ -456,14 +455,27 @@ class GameViewController: UIViewController {
         if(buttons[6].tag == whoseTurn && buttons[7].tag == whoseTurn && buttons[8].tag == whoseTurn)
         {
             gameOn = false
-            restartButton.isHidden = false
-            exitButton.isHidden = false
+            nextRoundButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
+                turnLabel.font = turnLabel.font.withSize(25)
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
                 save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
+                //Check which image was slected by player to select what color the background should be
+                if(player1ImageName == "X")
+                {
+                    buttons[6].backgroundColor = UIColor.purple
+                    buttons[7].backgroundColor = UIColor.purple
+                    buttons[8].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[6].backgroundColor = UIColor.cyan
+                    buttons[7].backgroundColor = UIColor.cyan
+                    buttons[8].backgroundColor = UIColor.cyan
+                }
             }
             else
             {
@@ -471,6 +483,19 @@ class GameViewController: UIViewController {
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
                 save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
+                
+                if(player2ImageName == "X")
+                {
+                    buttons[6].backgroundColor = UIColor.purple
+                    buttons[7].backgroundColor = UIColor.purple
+                    buttons[8].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[6].backgroundColor = UIColor.cyan
+                    buttons[7].backgroundColor = UIColor.cyan
+                    buttons[8].backgroundColor = UIColor.cyan
+                }
             }
         }
         
@@ -478,14 +503,27 @@ class GameViewController: UIViewController {
         if(buttons[0].tag == whoseTurn && buttons[3].tag == whoseTurn && buttons[6].tag == whoseTurn)
         {
             gameOn = false
-            restartButton.isHidden = false
-            exitButton.isHidden = false
+            nextRoundButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
+                turnLabel.font = turnLabel.font.withSize(25)
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
                 save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
+                //Check which image was slected by player to select what color the background should be
+                if(player1ImageName == "X")
+                {
+                    buttons[0].backgroundColor = UIColor.purple
+                    buttons[3].backgroundColor = UIColor.purple
+                    buttons[6].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[0].backgroundColor = UIColor.cyan
+                    buttons[3].backgroundColor = UIColor.cyan
+                    buttons[6].backgroundColor = UIColor.cyan
+                }
             }
             else
             {
@@ -493,6 +531,19 @@ class GameViewController: UIViewController {
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
                 save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
+                
+                if(player2ImageName == "X")
+                {
+                    buttons[0].backgroundColor = UIColor.purple
+                    buttons[3].backgroundColor = UIColor.purple
+                    buttons[6].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[0].backgroundColor = UIColor.cyan
+                    buttons[3].backgroundColor = UIColor.cyan
+                    buttons[6].backgroundColor = UIColor.cyan
+                }
             }
         }
         
@@ -500,14 +551,27 @@ class GameViewController: UIViewController {
         if(buttons[1].tag == whoseTurn && buttons[4].tag == whoseTurn && buttons[7].tag == whoseTurn)
         {
             gameOn = false
-            restartButton.isHidden = false
-            exitButton.isHidden = false
+            nextRoundButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
+                turnLabel.font = turnLabel.font.withSize(25)
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
                 save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
+                //Check which image was slected by player to select what color the background should be
+                if(player1ImageName == "X")
+                {
+                    buttons[1].backgroundColor = UIColor.purple
+                    buttons[4].backgroundColor = UIColor.purple
+                    buttons[7].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[1].backgroundColor = UIColor.cyan
+                    buttons[4].backgroundColor = UIColor.cyan
+                    buttons[7].backgroundColor = UIColor.cyan
+                }
             }
             else
             {
@@ -515,6 +579,19 @@ class GameViewController: UIViewController {
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
                 save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
+                
+                if(player2ImageName == "X")
+                {
+                    buttons[1].backgroundColor = UIColor.purple
+                    buttons[4].backgroundColor = UIColor.purple
+                    buttons[7].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[1].backgroundColor = UIColor.cyan
+                    buttons[4].backgroundColor = UIColor.cyan
+                    buttons[7].backgroundColor = UIColor.cyan
+                }
             }
         }
         
@@ -522,14 +599,27 @@ class GameViewController: UIViewController {
         if(buttons[2].tag == whoseTurn && buttons[5].tag == whoseTurn && buttons[8].tag == whoseTurn)
         {
             gameOn = false
-            restartButton.isHidden = false
-            exitButton.isHidden = false
+            nextRoundButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
+                turnLabel.font = turnLabel.font.withSize(25)
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
                 save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
+                //Check which image was slected by player to select what color the background should be
+                if(player1ImageName == "X")
+                {
+                    buttons[2].backgroundColor = UIColor.purple
+                    buttons[5].backgroundColor = UIColor.purple
+                    buttons[8].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[2].backgroundColor = UIColor.cyan
+                    buttons[5].backgroundColor = UIColor.cyan
+                    buttons[8].backgroundColor = UIColor.cyan
+                }
             }
             else
             {
@@ -537,6 +627,19 @@ class GameViewController: UIViewController {
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
                 save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
+                
+                if(player2ImageName == "X")
+                {
+                    buttons[2].backgroundColor = UIColor.purple
+                    buttons[5].backgroundColor = UIColor.purple
+                    buttons[8].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[2].backgroundColor = UIColor.cyan
+                    buttons[5].backgroundColor = UIColor.cyan
+                    buttons[8].backgroundColor = UIColor.cyan
+                }
             }
         }
         
@@ -544,14 +647,27 @@ class GameViewController: UIViewController {
         if(buttons[0].tag == whoseTurn && buttons[4].tag == whoseTurn && buttons[8].tag == whoseTurn)
         {
             gameOn = false
-            restartButton.isHidden = false
-            exitButton.isHidden = false
+            nextRoundButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
+                turnLabel.font = turnLabel.font.withSize(25)
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
                 save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
+                //Check which image was slected by player to select what color the background should be
+                if(player1ImageName == "X")
+                {
+                    buttons[0].backgroundColor = UIColor.purple
+                    buttons[4].backgroundColor = UIColor.purple
+                    buttons[8].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[0].backgroundColor = UIColor.cyan
+                    buttons[4].backgroundColor = UIColor.cyan
+                    buttons[8].backgroundColor = UIColor.cyan
+                }
             }
             else
             {
@@ -559,6 +675,19 @@ class GameViewController: UIViewController {
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
                 save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
+                
+                if(player2ImageName == "X")
+                {
+                    buttons[0].backgroundColor = UIColor.purple
+                    buttons[4].backgroundColor = UIColor.purple
+                    buttons[8].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[0].backgroundColor = UIColor.cyan
+                    buttons[4].backgroundColor = UIColor.cyan
+                    buttons[8].backgroundColor = UIColor.cyan
+                }
             }
         }
         
@@ -566,14 +695,27 @@ class GameViewController: UIViewController {
         if(buttons[2].tag == whoseTurn && buttons[4].tag == whoseTurn && buttons[6].tag == whoseTurn)
         {
             gameOn = false
-            restartButton.isHidden = false
-            exitButton.isHidden = false
+            nextRoundButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
+                turnLabel.font = turnLabel.font.withSize(25)
                 player1Score += 1
                 player1NameLabel.text = "\(player1Name): \n \(player1Score)"
                 save(name: "\(player1Name): \(player1Score) WIN | LOST \(player2Score): \(player2Name)\n")
+                //Check which image was slected by player to select what color the background should be
+                if(player1ImageName == "X")
+                {
+                    buttons[2].backgroundColor = UIColor.purple
+                    buttons[4].backgroundColor = UIColor.purple
+                    buttons[6].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[2].backgroundColor = UIColor.cyan
+                    buttons[4].backgroundColor = UIColor.cyan
+                    buttons[6].backgroundColor = UIColor.cyan
+                }
             }
             else
             {
@@ -581,6 +723,19 @@ class GameViewController: UIViewController {
                 player2Score += 1
                 player2NameLabel.text = "\(player2Name): \n \(player2Score)"
                 save(name: "\(player2Name): \(player2Score) WIN | LOST \(player1Score): \(player1Name)\n")
+                
+                if(player2ImageName == "X")
+                {
+                    buttons[2].backgroundColor = UIColor.purple
+                    buttons[4].backgroundColor = UIColor.purple
+                    buttons[6].backgroundColor = UIColor.purple
+                }
+                else
+                {
+                    buttons[2].backgroundColor = UIColor.cyan
+                    buttons[4].backgroundColor = UIColor.cyan
+                    buttons[6].backgroundColor = UIColor.cyan
+                }
             }
         }
         
