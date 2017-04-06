@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA3153B11E9620880016A946 /* BackgroundSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CA3153B01E9620880016A946 /* BackgroundSong.mp3 */; };
 		CA35E7041E7C1FE3009B66E2 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA35E7031E7C1FE3009B66E2 /* SetupViewController.swift */; };
 		CA498CC91E7A88E300C4B344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA498CC81E7A88E300C4B344 /* AppDelegate.swift */; };
 		CA498CCB1E7A88E300C4B344 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA498CCA1E7A88E300C4B344 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA3153B01E9620880016A946 /* BackgroundSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BackgroundSong.mp3; path = /Users/shaunanderson/Desktop/TicTacToe/TicTacToe/BackgroundSong.mp3; sourceTree = "<absolute>"; };
 		CA35E7031E7C1FE3009B66E2 /* SetupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		CA498CC51E7A88E300C4B344 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA498CC81E7A88E300C4B344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,11 +105,12 @@
 		CA498CC71E7A88E300C4B344 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				CA3153B01E9620880016A946 /* BackgroundSong.mp3 */,
 				CA498CF91E7A89CF00C4B344 /* GameViewController.swift */,
 				CA498CC81E7A88E300C4B344 /* AppDelegate.swift */,
 				CA498CCA1E7A88E300C4B344 /* ViewController.swift */,
-				CA498CCC1E7A88E300C4B344 /* Main.storyboard */,
 				CA35E7031E7C1FE3009B66E2 /* SetupViewController.swift */,
+				CA498CCC1E7A88E300C4B344 /* Main.storyboard */,
 				CA498CD21E7A88E300C4B344 /* Assets.xcassets */,
 				CA498CD41E7A88E300C4B344 /* LaunchScreen.storyboard */,
 				CA498CD71E7A88E300C4B344 /* Info.plist */,
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA498CD61E7A88E300C4B344 /* LaunchScreen.storyboard in Resources */,
+				CA3153B11E9620880016A946 /* BackgroundSong.mp3 in Resources */,
 				CA498CD31E7A88E300C4B344 /* Assets.xcassets in Resources */,
 				CA498CCE1E7A88E300C4B344 /* Main.storyboard in Resources */,
 			);
