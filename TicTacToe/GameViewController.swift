@@ -751,8 +751,6 @@ class GameViewController: UIViewController {
         if(!isSpace && gameOn == true)
         {
             gameOn = false
-            restartButton.isHidden = false
-            //exitButton.isHidden = false
             turnLabel.text = "No spaces left - TIE"
             tie += 1
             tieLabel.text = "TIE: \n \(tie)"
