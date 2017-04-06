@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var tieLabel: UILabel!
     @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var nextRoundButton: UIButton!
     
     //MARK: Variables
     var isSpace = true
@@ -34,10 +35,37 @@ class GameViewController: UIViewController {
     var soundPlayer : AVAudioPlayer!
     
     //MARK: Actions
+    //Reset the game and scores.
     @IBAction func restartGame(_ sender: UIButton)
     {
         gameOn = true
-        restartButton.isHidden = true
+        nextRoundButton.isHidden = true
+        
+        player2NameLabel.backgroundColor = UIColor.clear
+        player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 2.0)
+        player1Score = 0
+        player2Score = 0
+        player1NameLabel.text = "\(player1Name): \n \(player1Score)"
+        player2NameLabel.text = "\(player2Name): \n \(player2Score)"
+
+        
+        turnLabel.text = "Player 1 Turn"
+        turnLabel.font = turnLabel.font.withSize(17)
+        whoseTurn = 1
+        
+        //Reset Buttons
+        for button in buttons
+        {
+            button.setImage(UIImage(), for: .normal)
+            button.tag = 0
+            button.isUserInteractionEnabled = true
+            button.backgroundColor = UIColor.clear
+        }
+    }
+    
+    @IBAction func nextRound(_ sender: UIButton)
+    {
+        gameOn = true
         
         player2NameLabel.backgroundColor = UIColor.clear
         player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 2.0)
@@ -54,6 +82,7 @@ class GameViewController: UIViewController {
             button.isUserInteractionEnabled = true
             button.backgroundColor = UIColor.clear
         }
+        nextRoundButton.isHidden = true
     }
     
     //MARK: Functions
@@ -80,8 +109,9 @@ class GameViewController: UIViewController {
             do {
                 try soundPlayer = AVAudioPlayer(contentsOf: url)
                 soundPlayer.play()
-            }
-            catch {print("File not found")}
+                print("HELOOOOOOO")
+                }
+                catch {print("File not found")}
         }
         else
         {
@@ -150,6 +180,144 @@ class GameViewController: UIViewController {
                     done = true
                     break
                 }
+                
+                //Check for botton horizontal win from player
+                if(buttons[6].tag == 0 && buttons[7].tag == 1 && buttons[8].tag == 1)
+                {
+                    buttons[6].setImage(player2Image, for: .normal)
+                    buttons[6].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[6].tag == 1 && buttons[7].tag == 0 && buttons[8].tag == 1)
+                {
+                    buttons[7].setImage(player2Image, for: .normal)
+                    buttons[7].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[6].tag == 1 && buttons[7].tag == 1 && buttons[8].tag == 0)
+                {
+                    buttons[8].setImage(player2Image, for: .normal)
+                    buttons[8].tag = 2
+                    done = true
+                    break
+                }
+                
+                //Check for left vertical win from player
+                if(buttons[0].tag == 0 && buttons[3].tag == 1 && buttons[6].tag == 1)
+                {
+                    buttons[0].setImage(player2Image, for: .normal)
+                    buttons[0].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[0].tag == 1 && buttons[3].tag == 0 && buttons[6].tag == 1)
+                {
+                    buttons[3].setImage(player2Image, for: .normal)
+                    buttons[3].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[0].tag == 1 && buttons[3].tag == 1 && buttons[6].tag == 0)
+                {
+                    buttons[6].setImage(player2Image, for: .normal)
+                    buttons[6].tag = 2
+                    done = true
+                    break
+                }
+                
+                //Check for middle vertical win from player
+                if(buttons[1].tag == 0 && buttons[4].tag == 1 && buttons[7].tag == 1)
+                {
+                    buttons[1].setImage(player2Image, for: .normal)
+                    buttons[1].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[1].tag == 1 && buttons[4].tag == 0 && buttons[7].tag == 1)
+                {
+                    buttons[4].setImage(player2Image, for: .normal)
+                    buttons[4].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[1].tag == 1 && buttons[4].tag == 1 && buttons[7].tag == 0)
+                {
+                    buttons[7].setImage(player2Image, for: .normal)
+                    buttons[7].tag = 2
+                    done = true
+                    break
+                }
+                
+                //Check for left vertical win from player
+                if(buttons[2].tag == 0 && buttons[5].tag == 1 && buttons[8].tag == 1)
+                {
+                    buttons[2].setImage(player2Image, for: .normal)
+                    buttons[2].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[2].tag == 1 && buttons[5].tag == 0 && buttons[8].tag == 1)
+                {
+                    buttons[5].setImage(player2Image, for: .normal)
+                    buttons[5].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[2].tag == 1 && buttons[5].tag == 1 && buttons[8].tag == 0)
+                {
+                    buttons[8].setImage(player2Image, for: .normal)
+                    buttons[8].tag = 2
+                    done = true
+                    break
+                }
+                
+                //Check for left diagonal win from player
+                if(buttons[0].tag == 0 && buttons[4].tag == 1 && buttons[8].tag == 1)
+                {
+                    buttons[0].setImage(player2Image, for: .normal)
+                    buttons[0].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[0].tag == 1 && buttons[4].tag == 0 && buttons[8].tag == 1)
+                {
+                    buttons[4].setImage(player2Image, for: .normal)
+                    buttons[4].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[0].tag == 1 && buttons[4].tag == 1 && buttons[8].tag == 0)
+                {
+                    buttons[8].setImage(player2Image, for: .normal)
+                    buttons[8].tag = 2
+                    done = true
+                    break
+                }
+                
+                //Check for left diagonal win from player
+                if(buttons[2].tag == 0 && buttons[4].tag == 1 && buttons[6].tag == 1)
+                {
+                    buttons[2].setImage(player2Image, for: .normal)
+                    buttons[2].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[2].tag == 1 && buttons[4].tag == 0 && buttons[6].tag == 1)
+                {
+                    buttons[4].setImage(player2Image, for: .normal)
+                    buttons[4].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[2].tag == 1 && buttons[4].tag == 1 && buttons[6].tag == 0)
+                {
+                    buttons[6].setImage(player2Image, for: .normal)
+                    buttons[6].tag = 2
+                    done = true
+                    break
+                }
             }
             
             //Check if middle is taken and if it is choose a random
@@ -191,8 +359,7 @@ class GameViewController: UIViewController {
         if(buttons[0].tag == whoseTurn && buttons[1].tag == whoseTurn && buttons[2].tag == whoseTurn)
         {
             gameOn = false
-            restartButton.isHidden = false
-            exitButton.isHidden = false
+            nextRoundButton.isHidden = false
             if(whoseTurn == 1)
             {
                 turnLabel.text = "\(player1Name) wins"
@@ -203,11 +370,15 @@ class GameViewController: UIViewController {
                 //Check which image was slected by player to select what color the background should be
                 if(player1ImageName == "X")
                 {
-                    buttons[0].backgroundColor = UIColor.purple; buttons[1].backgroundColor = UIColor.purple; buttons[2].backgroundColor = UIColor.purple
+                    buttons[0].backgroundColor = UIColor.purple
+                    buttons[1].backgroundColor = UIColor.purple
+                    buttons[2].backgroundColor = UIColor.purple
                 }
                 else
                 {
-                    buttons[0].backgroundColor = UIColor.blue; buttons[1].backgroundColor = UIColor.blue; buttons[2].backgroundColor = UIColor.blue
+                    buttons[0].backgroundColor = UIColor.cyan
+                    buttons[1].backgroundColor = UIColor.cyan
+                    buttons[2].backgroundColor = UIColor.cyan
                 }
             }
             else
@@ -225,9 +396,9 @@ class GameViewController: UIViewController {
                 }
                 else
                 {
-                    buttons[0].backgroundColor = UIColor.blue
-                    buttons[1].backgroundColor = UIColor.blue
-                    buttons[2].backgroundColor = UIColor.blue
+                    buttons[0].backgroundColor = UIColor.cyan
+                    buttons[1].backgroundColor = UIColor.cyan
+                    buttons[2].backgroundColor = UIColor.cyan
                 }
             }
         }
