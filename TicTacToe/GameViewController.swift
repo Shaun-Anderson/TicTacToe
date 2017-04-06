@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AVFoundation
 
 class GameViewController: UIViewController {
     
@@ -30,6 +31,7 @@ class GameViewController: UIViewController {
     var player1Score = 0
     var player2Score = 0
     var aiHelp : [Int] = [0,1,2,3,4,5,6,7,8]
+    var soundPlayer : AVAudioPlayer!
     
     //MARK: Actions
     @IBAction func restartGame(_ sender: UIButton)
@@ -57,6 +59,7 @@ class GameViewController: UIViewController {
     //MARK: Functions
     override func viewDidLoad()
     {
+        //Set all the UI elements to their starting states.
         super.viewDidLoad()
         player1NameLabel.text = "\(player1Name): \n \(player1Score)"
         player1NameLabel.backgroundColor = UIColor (colorLiteralRed: 46/255.0, green: 11/255.0, blue: 49/255.0, alpha: 1.0)
@@ -65,16 +68,33 @@ class GameViewController: UIViewController {
         player2IconImageView.image = player2Icon
         tieLabel.text = "TIE: \n \(tie)"
         
-        //SET SCORES TO ZERO
+        //Set scores to zero.
         player1Score = 0
         player2Score = 0
         
-        
+        //Get mp3 for background music then play it.
+        if let path = Bundle.main.path(forResource: "BackgroundSong", ofType: "mp3")
+        {
+            let url = URL(fileURLWithPath: path)
+            
+            do {
+                try soundPlayer = AVAudioPlayer(contentsOf: url)
+                soundPlayer.play()
+            }
+            catch {print("File not found")}
+        }
+        else
+        {
+            print("path not found")
+        }
         
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    //This function controls the AI's whole turn and involves both checking player. This function also takes the difficulty set by the player that they selected.
     func AITurn()
     {
         var done = false
@@ -83,52 +103,56 @@ class GameViewController: UIViewController {
         {
             let randomInt = Int(arc4random_uniform(9))
             
-            //Check for top potential win from player
-            if(buttons[0].tag == 1 && buttons[1].tag == 1 && buttons[2].tag == 0)
+            if(AIEasy == false)
             {
-                buttons[2].setImage(player2Image, for: .normal)
-                buttons[2].tag = 2
-                done = true
-                break
-            }
-            if(buttons[1].tag == 1 && buttons[2].tag == 1 && buttons[0].tag == 0)
-            {
-                buttons[0].setImage(player2Image, for: .normal)
-                buttons[0].tag = 2
-                done = true
-                break
-            }
-            if(buttons[0].tag == 1 && buttons[2].tag == 1 && buttons[1].tag == 0)
-            {
-                buttons[1].setImage(player2Image, for: .normal)
-                buttons[1].tag = 2
-                done = true
-                break
+                //Check for top potential win from player
+                if(buttons[0].tag == 1 && buttons[1].tag == 1 && buttons[2].tag == 0)
+                {
+                    buttons[2].setImage(player2Image, for: .normal)
+                    buttons[2].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[1].tag == 1 && buttons[2].tag == 1 && buttons[0].tag == 0)
+                {
+                    buttons[0].setImage(player2Image, for: .normal)
+                    buttons[0].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[0].tag == 1 && buttons[2].tag == 1 && buttons[1].tag == 0)
+                {
+                    buttons[1].setImage(player2Image, for: .normal)
+                    buttons[1].tag = 2
+                    done = true
+                    break
+                }
+            
+                //Check for middle horizontal win from player
+                if(buttons[3].tag == 1 && buttons[4].tag == 1 && buttons[5].tag == 0)
+                {
+                    buttons[5].setImage(player2Image, for: .normal)
+                    buttons[5].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[3].tag == 1 && buttons[5].tag == 1 && buttons[4].tag == 0)
+                {
+                    buttons[4].setImage(player2Image, for: .normal)
+                    buttons[4].tag = 2
+                    done = true
+                    break
+                }
+                if(buttons[4].tag == 1 && buttons[5].tag == 1 && buttons[3].tag == 0)
+                {
+                    buttons[3].setImage(player2Image, for: .normal)
+                    buttons[3].tag = 2
+                    done = true
+                    break
+                }
             }
             
-            //CHECK FOR HORIZONAL MIDDLE WIN FROM PLAYER
-            if(buttons[3].tag == 1 && buttons[4].tag == 1 && buttons[5].tag == 0)
-            {
-                buttons[5].setImage(player2Image, for: .normal)
-                buttons[5].tag = 2
-                done = true
-                break
-            }
-            if(buttons[3].tag == 1 && buttons[5].tag == 1 && buttons[4].tag == 0)
-            {
-                buttons[4].setImage(player2Image, for: .normal)
-                buttons[4].tag = 2
-                done = true
-                break
-            }
-            if(buttons[4].tag == 1 && buttons[5].tag == 1 && buttons[3].tag == 0)
-            {
-                buttons[3].setImage(player2Image, for: .normal)
-                buttons[3].tag = 2
-                done = true
-                break
-            }
-            
+            //Check if middle is taken and if it is choose a random
             if(buttons[4].tag == 0)
             {
                 buttons[4].setImage(player2Image, for: .normal)
@@ -157,6 +181,7 @@ class GameViewController: UIViewController {
 
     }
     
+    //Check if a win condiditon is met aswell and then change the UI elements to reflect that as well as change the background of the 3 buttons within the win condition to show which way the player/computer won.
     func CheckGrid()
     {
         //Make isSpace false and check against grid array to see if there are any spaces left

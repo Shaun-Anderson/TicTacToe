@@ -12,10 +12,9 @@ import CoreData
 class SetupViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     
-
+    //MARK: Properties
     @IBOutlet weak var player2IconButton: UIButton!
     @IBOutlet weak var player1IconButton: UIButton!
-    //MARK: Properties
     @IBOutlet weak var player2NameTextfield: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var player2NameLabel: UILabel!
@@ -23,8 +22,12 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
     @IBOutlet weak var difficultySegment: UISegmentedControl!
     @IBOutlet weak var historyTextView: UITextView!
     @IBOutlet weak var historyView: UIView!
+    @IBOutlet weak var crossButton: UIButton!
+    @IBOutlet weak var circleButton: UIButton!
+    //MARK: Variables
+    var imagePicked: Int = 0
     
-
+    //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +39,7 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         {
             titleLabel.text = "PLAYER VS COMPUTER"
             player2NameTextfield.isHidden = true
-            player2NameLabel.isHidden = true
+            player2NameLabel.text = "COMPUTER"
             player2Name = "COMPUTER"
             player2IconButton.isUserInteractionEnabled = false
             selectIconLabel.text = "SELECT ICON"
@@ -124,10 +127,6 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         }
     }
     
-    @IBOutlet weak var crossButton: UIButton!
-
-    @IBOutlet weak var circleButton: UIButton!
-    
     @IBAction func PickImageButtonPressed(_ sender: UIButton) {
         if(sender.tag == 0)
         {
@@ -148,9 +147,8 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
             player2ImageName = "X"
         }
     }
-
-    var imagePicked: Int = 0
     
+    //Brings up the image picker when an icon button is pressed.
     @IBAction func iconPressed(_ sender: UIButton)
     {
         imagePicked = sender.tag
@@ -163,6 +161,7 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
                         
         }
     }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         
@@ -187,6 +186,7 @@ class SetupViewController: UIViewController, UINavigationControllerDelegate, UII
         self.dismiss(animated: true, completion: nil)
     }
     
+    //Clears the data from history
     @IBAction func clearButtonPressed(_ sender: UIButton) {
         
         //DELETE SAVED GAMES
